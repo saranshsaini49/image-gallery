@@ -1,3 +1,4 @@
+import { useAppContext } from "../../context/AppContext";
 import SearchBar from "./SearchBar";
 
 const SearchBarCard = () => {
