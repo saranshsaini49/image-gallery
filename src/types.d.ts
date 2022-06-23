@@ -11,7 +11,12 @@ interface ContextType {
   state: State;
   dispatch: React.Dispatch<Action>;
 }
+interface SearchBarType {
+  searchQuery: string;
+  getPhotos: () => Promise<void>;
+  setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
+}
 
 type Action = { type: "ADD_IMAGES"; payload: ImagesType };
 
-export { State, ImagesType, Action, ContextType };
+export { State, ImagesType, Action, ContextType, SearchBarType };
