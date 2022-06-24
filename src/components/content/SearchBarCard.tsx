@@ -7,7 +7,10 @@ const SearchBarCard = () => {
   const { dispatch } = useAppContext();
   const [searchQuery, setSearchQuery] = useState("");
   const getPhotos = async () => {
-    const res = await unsplash.search.getPhotos({ query: searchQuery.trim() });
+    const res = await unsplash.search.getPhotos({
+      perPage: 30,
+      query: searchQuery.trim(),
+    });
     if (res.response) {
       dispatch({ type: "ADD_IMAGES", payload: res.response.results });
     }

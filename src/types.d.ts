@@ -16,7 +16,29 @@ interface SearchBarType {
   getPhotos: () => Promise<void>;
   setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
 }
+interface UserType {
+  name: string;
+  username: string;
+  twitter_username: string;
+  instagram_username: string;
+  profile_img: string;
+}
+interface ImageCardType {
+  likes: number;
+  user: UserType;
+  img_url: string;
+  description: string;
+  download_url: string;
+}
 
 type Action = { type: "ADD_IMAGES"; payload: ImagesType };
 
-export { State, ImagesType, Action, ContextType, SearchBarType };
+export {
+  State,
+  ImagesType,
+  Action,
+  ContextType,
+  SearchBarType,
+  UserType,
+  ImageCardType,
+};
